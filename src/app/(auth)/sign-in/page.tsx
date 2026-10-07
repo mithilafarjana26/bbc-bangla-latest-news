@@ -28,6 +28,7 @@ const SignIn = () => {
     const { data: resData, error } = await signIn.email({
       email: data.email,
       password: data.password,
+      callbackURL:'/'
     });
 
     console.log(resData, error);

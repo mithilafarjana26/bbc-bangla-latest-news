@@ -1,6 +1,6 @@
 "use client";
 
-import { signUp } from "@/lib/auth-client";
+import { signIn, signUp } from "@/lib/auth-client";
 import {
   Button,
   Description,
@@ -28,10 +28,18 @@ const SignUp = () => {
       name: data.name,
       email: data.email,
       password: data.password,
+      callbackURL:'/sign-in'
     });
 
     console.log(resData, error);
   };
+
+  const handleGoogleSignIn = async() =>{
+const resData = await signIn.social({
+   provider: "google",
+})
+console.log(resData)
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 py-8">
@@ -178,6 +186,9 @@ const SignUp = () => {
             >
               সাইন ইন করুন
             </a>
+          </div>
+          <div>
+            <button onClick={handleGoogleSignIn}>Google</button>
           </div>
         </div>
       </div>

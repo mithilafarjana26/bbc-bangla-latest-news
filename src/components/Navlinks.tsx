@@ -1,5 +1,6 @@
 
 import Link from "next/link";
+import UpdatePrivateProfile from "./UpdatePrivateProfile";
 
 interface Navs {
     slug:string
@@ -57,6 +58,7 @@ const Navlinks = async () => {
               {ct.title}
             </Link>
           ))}
+          <UpdatePrivateProfile></UpdatePrivateProfile>
         </div>
       </div>
     </div>

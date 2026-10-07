@@ -14,8 +14,12 @@ const Inupbtn = () => {
     const authLinks = <>
         {
            session?.user?<>
-           <span>Welcome {session?.user?.name}</span>
-           <button onClick={() =>signOut()}>Signout</button>
+           <div className='flex gap-4 justify-center items-center'>
+            <span>Welcome {session?.user?.name}</span>
+           <button  className="px-4 py-2 bg-red-600 text-white rounded-lg font-medium 
+             hover:bg-red-700 transition duration-200 
+             shadow-sm hover:shadow-md" onClick={() =>signOut()}>Signout</button>
+           </div>
            </>:<><Link href='/sign-up'><button className='btn'>সাইন  আপ</button></Link>
            <Link href='/sign-in'><button className='btn'>সাইন ইন</button></Link></>
         }
