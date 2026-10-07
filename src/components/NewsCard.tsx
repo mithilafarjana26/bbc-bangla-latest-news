@@ -4,13 +4,13 @@ import React from 'react';
 const NewsCard = ({news}) => {
     return (
         <div>
-            <div className="w-full card bg-base-100 shadow-sm border border-gray-200 overflow-hidden">
+            <div className=" card bg-base-100 shadow-sm border border-gray-200 overflow-hidden">
                     
                     <figure className="w-full">
                       <Image
                         src={news.imageUrl}
                         alt={news.imageAlt || news.title}
-                        width={640}
+                        width={400}
                         height={400}
                         className="w-full h-64 sm:h-72 md:h-80 object-cover"
                       />
