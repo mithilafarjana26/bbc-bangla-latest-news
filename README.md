@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📰 BBC Bangla News
 
-## Getting Started
+A modern and responsive Bangla news website built with **Next.js, TypeScript, Tailwind CSS, HeroUI, and Better Auth**.
 
-First, run the development server:
+This project uses the BBC Bangla News API to display latest news, categories, most-read news, detailed articles, and provides user authentication with profile management.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 🏠 Responsive Home Page
+- 📰 Latest News Marquee
+- 📂 Dynamic News Categories
+- 🔥 Most Read News
+- 📄 Dynamic News Details Page
+- 🖼️ BBC Remote Images using Next.js Image
+- 📱 Fully Responsive Design
+- 🔐 Email & Password Authentication
+- 🔵 Google Authentication
+- 👤 User Profile Update
+- 🚪 Sign In / Sign Up / Sign Out
+- 🗄️ MongoDB Database
+- 🎨 Tailwind CSS & HeroUI
+- ⚡ Next.js App Router
+- 🧩 Reusable Components
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Technologies
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- HeroUI
+- DaisyUI
+- Better Auth
+- MongoDB
+- React Marquee Text
 
-## Learn More
+## 🔐 Private Profile Route
 
-To learn more about Next.js, take a look at the following resources:
+The Profile page is protected and can only be accessed by authenticated users.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+If a user is not logged in, they cannot access the Profile page. After successful authentication, the user can access `/profile` and update their profile information.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Profile Access Flow
 
-## Deploy on Vercel
+```text
+User
+ ↓
+Is the user authenticated?
+ ↓
+ ├── No → Access denied / Redirect to Sign In
+ │
+ └── Yes → Profile Page
+              ↓
+         Update Profile
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🌐 API
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project uses the following News API:
+
+`https://news-api-v2.vercel.app`
+
+Main endpoints:
+
+- `/api/news/sections`
+- `/api/news?limit=10`
+- `/api/news/most-read`
+- `/api/categories`
+- `/api/article/[id]`
+
+## 📁 Project Structure
+
+```text
+src/
+├── app/
+│   ├── api/
+│   │   └── categories/
+│   │       └── route.ts
+│   ├── category/
+│   │   └── [id]/
+│   │       └── page.tsx
+│   ├── news/
+│   │   └── [id]/
+│   │       └── page.tsx
+│   ├── sign-in/
+│   │   └── page.tsx
+│   ├── sign-up/
+│   │   └── page.tsx
+│   ├── profile/
+│   │   └── page.tsx
+│   ├── layout.tsx
+│   └── page.tsx
+│
+├── components/
+│   ├── Header.tsx
+│   ├── Navlinks.tsx
+│   ├── Marquee.tsx
+│   ├── MainNews.tsx
+│   ├── NewsCard.tsx
+│   ├── MostRead.tsx
+│   └── Footer.tsx
+│
+└── lib/
+    ├── auth.ts
+    └── auth-client.ts
+
+   
