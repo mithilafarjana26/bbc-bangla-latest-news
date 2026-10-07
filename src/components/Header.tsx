@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import Navlinks from './Navlinks';
+import Link from 'next/link';
 const Header = () => {
     const date = new Date().toLocaleDateString("bn-BD",{
         dateStyle:"full"
@@ -30,8 +31,9 @@ const Header = () => {
        </div>
 
 <div className='flex items-center justify-center gap-4'>
-    <button className='btn'>সাইন ইন</button>
-    <button className='btn'>সাইন আপ</button>
+    <Link href='/sign-up'><button className='btn'>সাইন  আপ</button></Link>
+        <Link href='/sign-in'><button className='btn'>সাইন ইন</button></Link>
+
 </div>
        </div>
 
