@@ -1,11 +1,28 @@
+
 import Image from 'next/image';
-import React from 'react';
+
 import Navlinks from './Navlinks';
-import Link from 'next/link';
+import Inupbtn from './Inupbtn';
+
 const Header = () => {
     const date = new Date().toLocaleDateString("bn-BD",{
         dateStyle:"full"
     })
+
+// const {data:session,isPending} = useSession()
+// if(isPending){
+//     return <span className="loading loading-spinner text-success"></span>
+
+// }
+    // const authLinks = <>
+    //  {
+    //     session?.user?<>
+    //     <span>Welcome {session?.user?.name}</span>
+    //     </>:<><Link href='/sign-up'><button className='btn'>সাইন  আপ</button></Link>
+    //     <Link href='/sign-in'><button className='btn'>সাইন ইন</button></Link></>
+    //  }
+    // </>
+
     return (
        <div>
         <div className='flex justify-between'>
@@ -31,8 +48,7 @@ const Header = () => {
        </div>
 
 <div className='flex items-center justify-center gap-4'>
-    <Link href='/sign-up'><button className='btn'>সাইন  আপ</button></Link>
-        <Link href='/sign-in'><button className='btn'>সাইন ইন</button></Link>
+   <Inupbtn></Inupbtn>
 
 </div>
        </div>

@@ -11,9 +11,8 @@ interface Navs {
 
 
 const Navlinks = async () => {
-  const res = await fetch(
-    "https://news-api-v2.vercel.app/api/categories"
-  );
+  const res = await fetch("https://news-api-v2.vercel.app/api/categories"
+);
 
   const data = await res.json();
   const categoryLinks:Navs[] = data.data;
