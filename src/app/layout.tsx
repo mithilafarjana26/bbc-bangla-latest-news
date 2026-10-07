@@ -3,6 +3,7 @@ import { Noto_Serif_Bengali } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const geistSans = Noto_Serif_Bengali({
   subsets: ["latin","bengali"],
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <Header></Header>
         {children}
+        <Footer></Footer>
         </body>
     </html>
   );

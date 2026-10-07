@@ -1,8 +1,10 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const NewsCard = ({news}) => {
     return (
+        <Link href={`/news/${news.id}`}>
         <div>
             <div className=" card bg-base-100 shadow-sm border border-gray-200 overflow-hidden">
                     
@@ -31,6 +33,7 @@ const NewsCard = ({news}) => {
                     </div>
                   </div>
         </div>
+        </Link>
     );
 };
 

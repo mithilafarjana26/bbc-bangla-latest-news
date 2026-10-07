@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type News = {
   id: string;
@@ -17,13 +18,14 @@ interface MainNewsProps {
 
 const MainNews = ({ mainNews }: MainNewsProps) => {
   const [firstNews, ...othersNews] = mainNews;
-
+console.log(firstNews)
   if (!firstNews) return null;
 
   return (
     <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4">
 
       {/* Main News */}
+    <Link href={`/news/${firstNews.id}`}>
       <div className="w-full card bg-base-100 shadow-sm border border-gray-200 overflow-hidden">
         
         <figure className="w-full">
@@ -50,6 +52,7 @@ const MainNews = ({ mainNews }: MainNewsProps) => {
           </p>
         </div>
       </div>
+    </Link>
 
       {/* Other News */}
       <div className="w-full grid gap-3">

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface News {
   id: string;
   title: string;
@@ -21,6 +23,7 @@ const MostRead = async () => {
 
   const data = await res.json();
   const news: News[] = data.data;
+  console.log(news)
 
   return (
     <div className="card p-2 bg-base-100 border border-gray-300">
@@ -28,6 +31,7 @@ const MostRead = async () => {
         সর্বাধিক পঠিত
       </h1>
 
+      
       <div className="grid gap-3">
         {news.map((n, i) => (
           <div className="flex gap-2" key={n.id}>
@@ -39,6 +43,7 @@ const MostRead = async () => {
           </div>
         ))}
       </div>
+     
     </div>
   );
 };

@@ -42,7 +42,7 @@ const Navlinks = async () => {
           {filterNews.map((ct: { slug: string; title: string }) => (
             <Link
               key={ct.slug}
-              href={`/${ct.slug}`}
+              href={`/category/${ct.slug}`}
               className="
                 shrink-0
                 px-3 py-1.5
