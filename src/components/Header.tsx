@@ -1,11 +1,13 @@
 import Image from 'next/image';
 import React from 'react';
+import Navlinks from './Navlinks';
 const Header = () => {
     const date = new Date().toLocaleDateString("bn-BD",{
         dateStyle:"full"
     })
     return (
-       <div className='flex justify-between'>
+       <div>
+        <div className='flex justify-between'>
 <div>
 
 </div>
@@ -31,6 +33,12 @@ const Header = () => {
     <button className='btn'>সাইন ইন</button>
     <button className='btn'>সাইন আপ</button>
 </div>
+       </div>
+
+
+
+       {/* navlinks */}
+       <Navlinks></Navlinks>
        </div>
     );
 };
