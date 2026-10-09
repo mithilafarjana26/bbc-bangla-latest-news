@@ -33,7 +33,7 @@ const MostRead = async () => {
 
       
       <div className="grid gap-3">
-        {news.map((n, i) => (
+        {news.slice(0,4).map((n, i) => (
           <div className="flex gap-2" key={n.id}>
             <p className="text-2xl font-bold text-red-600">
               {i + 1}.
